@@ -1,0 +1,9 @@
+.header-container{
+  background-color: black;
+  height: 100px;
+}
+
+.header-container-img{
+  padding-top: 30px;
+  padding-left: 30px;
+}

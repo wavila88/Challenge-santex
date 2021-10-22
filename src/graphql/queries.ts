@@ -11,6 +11,7 @@
                   source
               },
           variants{
+              id,
               name,
               price,
               featuredAsset{

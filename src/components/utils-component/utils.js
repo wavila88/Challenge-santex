@@ -1,0 +1,1 @@
+export const formatCurrency = (value) => `$ ${Intl.NumberFormat('es-MX').format(value)}`;

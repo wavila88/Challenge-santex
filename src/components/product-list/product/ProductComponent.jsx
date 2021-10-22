@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addItemToOrderAction, ADD_CART, callAnyAction } from '../../../store/products/productsAction';
+import { formatCurrency } from '../../utils-component/utils';
 import './ProductComponent.css';
 
 export const ProductComponent = ({ variant, product }) => {
@@ -25,7 +26,7 @@ export const ProductComponent = ({ variant, product }) => {
             </div>
           </a>
           <div className="card-footer">
-            {`$ ${Intl.NumberFormat('es-MX').format(variant.price)}`}
+            {formatCurrency(variant.price)}
           </div>
 
           <a href="#"  >

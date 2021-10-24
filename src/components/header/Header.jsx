@@ -1,10 +1,20 @@
+import React from 'react';
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+
 import { formatCurrency } from '../utils-component/utils';
+import { useStateWithStorage } from '../hooks/useStateWithStorage';
+import { INITIAL_STATE } from '../../store/products/productsReducer';
 import './Header.css'
 
 export function Header() {
+  const productStore= useSelector(state => state.ProductsReducer);
+  const [objectProducts, setObjectProducts] = useStateWithStorage(INITIAL_STATE);
 
-  const totalValue = useSelector(state => state.ProductsReducer.amountCart);
+  useEffect(() => {
+    setObjectProducts(productStore);
+  },[productStore]);
+
   return (
     <header >
       <div className={'header-container'}>
@@ -18,7 +28,7 @@ export function Header() {
       </div>
       <div className={'header-summary-container'}>
         <div className={'header-summary-text'}>
-          {`Valor total compra: ${formatCurrency(totalValue)}`}
+          {`Valor total compra: ${formatCurrency(objectProducts?.amountCart)}`}
         </div>
       </div>
     </header>

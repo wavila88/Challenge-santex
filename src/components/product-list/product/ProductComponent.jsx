@@ -10,7 +10,7 @@ export const ProductComponent = ({ variant, product }) => {
   return (
     <>
       <div className="card text-center">
-        <a href="#">
+        <a>
           <div className="card-header">
             {product.name}
           </div>
@@ -20,7 +20,7 @@ export const ProductComponent = ({ variant, product }) => {
         </a>
         <div className="card-body">
 
-          <a href="#">
+          <a>
             <div className="card-title">
               <h5 >{variant.name}</h5>
             </div>

@@ -39,7 +39,7 @@ export const ProductComponent = ({ variant, product }) => {
               </p>
 
               :
-              <p onClick={() => {
+              <p data-testid={`${variant.name}-id`} onClick={() => {
                 dispatch(addItemToOrderAction(variant))
                 setIsCartSelected(true);
               }}
